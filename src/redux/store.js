@@ -1,23 +1,6 @@
-import {createStore} from 'redux';
+import { createStore } from 'redux';
+import rootReducer from './rootReducer';
 
-const initialeStore = {
-    contacts: [{
-        id: "1",
-        name: "Natalia",
-        number: "547-23-15",
-    },
-    {
-        id: "2",
-        name: "Tatyana",
-        number: "565-22-19",
-    },
-    ]
-}
-
-const reducer = (store = initialeStore) => {
-    return store;
-}
-
-const store = createStore(reducer);
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 export default store;
