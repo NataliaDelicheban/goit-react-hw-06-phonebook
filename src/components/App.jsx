@@ -1,4 +1,3 @@
-// import { nanoid } from 'nanoid';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { ContactForm } from './ContactForm/ContactForm';
@@ -17,6 +16,7 @@ import {Filter} from './Filter/Filter';
 //   { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
 //   { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
 // ];
+
 export function App() {
   const contacts = useSelector(getFilteredContacts);
   const filter = useSelector(getFilter);
