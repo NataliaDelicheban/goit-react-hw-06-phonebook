@@ -16,10 +16,18 @@ export function App() {
 
   const dispatch = useDispatch();
 
-  const onAddContact = (payload) => {
-    const action = addContact(payload);
-    dispatch(action)
-  }
+  const onAddContact = ({name, number}) => {
+    const commonName = contacts.find(contact => {
+      return contact.name.toLowerCase() === name.toLowerCase();
+    });
+    if (commonName) {
+      alert(`${name} is already in contacts!`);
+      return
+    };
+
+      const action = addContact({name, number});
+      dispatch(action)
+    }
 
   const onRemoveContact = (payload) => {
     dispatch(removeContact(payload));
